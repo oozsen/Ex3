@@ -73,7 +73,9 @@ namespace Ex3
                 "Yes",
                 "No"))
             {
-                //TODO
+                var dialer = DependencyService.Get<IDialer>();
+                if (dialer != null)
+                    await dialer.DialAsync(translatedNumber);
             }
         }
     }
