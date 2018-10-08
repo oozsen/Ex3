@@ -16,7 +16,16 @@ namespace Ex3
 
         public MainPage()
         {
-            this.Padding = new Thickness(20, 20, 20, 20);
+            //this.Padding = new Thickness(20, 20, 20, 20);
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    this.Padding = new Thickness(20, 40, 20, 20);
+                    break;
+                default:
+                    this.Padding = new Thickness(20);
+                    break;
+            }
 
             StackLayout panel = new StackLayout
             {
